@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Say Hello</title>
+      <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+   </head>
+
+   <body>
+
+
+
+
+      <img  src="https://upload.wikimedia.org/wikipedia/it/5/52/Camera_Caf%C3%A9_bicchiere.png">
+      <br>
+      <form action="greet" method="post">
+
+         <!-- La sintassi flask per rendere un elemento comunicante con il python file è quella con le parentesi graffe ed i simboli di percentuale-->
+
+         <!--Non indicare nei commenti questi caratteri speciali. Rischiano di dare errore-->
+
+         {% for message in get_flashed_messages()%}
+            <p> {{message}} </p>
+         {% endfor %}
+
+         <br>
+         <input type ="text" name="name_input">
+         <br>
+         <input type="submit" value="GREET" id="greet">
+      </form>
+   </body>
+</html>
+
+<!--flask run (per avviare il server locale e testare il sito)-->
+
+<!--jobs per identificare il processo -->
+<!--kill simbolo_percentuale1 per chiuderlo-->
